@@ -18,11 +18,51 @@
 # main()
 
 
+# from tkinter import *
+# 
+# # Variable to store the text to be displayed
+# greeting_text = "Hi There"
+# goodbye_text = "Goodbye!"
+# 
+# def quit():
+#     # Close the main window
+#     global main_window
+#     main_window.destroy()
+# 
+# def hello():
+#     # Display the greeting text in a label
+#     global main_window
+#     Label(main_window, text=greeting_text).grid()
+#     print(greeting_text)  # Print to console
+# 
+# def goodbye():
+#     # Display the goodbye text in a label
+#     global main_window
+#     Label(main_window, text=goodbye_text).grid()
+#     print(goodbye_text)  # Print to console
+# 
+# def main():
+#     # Initialize and run the Tkinter GUI application
+#     global main_window
+#     main_window = Tk()
+#     
+#     # Create and place the greeting button
+#     Button(main_window, text="Hi There", command=hello).grid()
+#     
+#     # Create and place the goodbye button
+#     Button(main_window, text="Goodbye", command=goodbye).grid()
+#     
+#     # Create and place the quit button
+#     Button(main_window, text="quit", command=quit).grid()
+#     
+#     # Start the event loop
+#     main_window.mainloop()
+# 
+# # Run the application
+# main()
+
 from tkinter import *
 
-# Variable to store the text to be displayed
-greeting_text = "Hi There"
-goodbye_text = "Goodbye!"
 
 def quit():
     # Close the main window
@@ -32,31 +72,26 @@ def quit():
 def hello():
     # Display the greeting text in a label
     global main_window
-    Label(main_window, text=greeting_text).grid()
-    print(greeting_text)  # Print to console
+    Label(main_window, text="Hi There").grid()
 
-def goodbye():
-    # Display the goodbye text in a label
-    global main_window
-    Label(main_window, text=goodbye_text).grid()
-    print(goodbye_text)  # Print to console
+def entry_print():
+    entry_text = entry_box1.get()
+    entry_text2 = entry_box2.get()
+    Label(main_window, text=entry_text).grid()  # Display in GUI
+    Label(main_window, text=entry_text2).grid()  # Display in GUI
+
 
 def main():
-    # Initialize and run the Tkinter GUI application
     global main_window
-    main_window = Tk()
-    
-    # Create and place the greeting button
     Button(main_window, text="Hi There", command=hello).grid()
-    
-    # Create and place the goodbye button
-    Button(main_window, text="Goodbye", command=goodbye).grid()
-    
-    # Create and place the quit button
-    Button(main_window, text="quit", command=quit).grid()
-    
-    # Start the event loop
+    Button(main_window, text="Print", command=entry_print).grid()
+    Button(main_window, text="Quit", command=quit).grid()
     main_window.mainloop()
 
-# Run the application
+main_window = Tk()
+entry_box1 = Entry(main_window)
+entry_box1.grid()
+entry_box2 = Entry(main_window)
+entry_box2.grid()
+
 main()
